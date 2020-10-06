@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 
 public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    bool cheakgage;
-    bool cheaktouch;
-    private float gage;
-    public GameObject sphere;
+    bool cheakgage; //??
+    bool cheaktouch; //터시 상태
+    private float gage; //모인 게이지
+    public float jumpPower; //점프 세기
+    public GameObject sphere; //플레이어
+    public Slider powerBar; // 파워 바
+    public float maxPower = 100; // 파워 최대치
+    private float currentPower;
+    
+
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -21,7 +28,8 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         Debug.Log("aa");
         cheaktouch = false;
-        sphere.GetComponent<Rigidbody>().AddForce(new Vector3(gage*10,gage*10));
+        currentPower = 0;
+        sphere.GetComponent<Rigidbody>().AddForce(new Vector3(gage*jumpPower,gage*jumpPower,0));
     }
 
     void Start()
@@ -33,8 +41,10 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     void Update()
     {
+        
         if (cheaktouch == true)
         {
+            powerBar.value = gage / maxPower;
             if (cheakgage == true)
             {
                 gage += 1;
@@ -51,4 +61,6 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         Debug.Log("chaek:" + cheakgage + ", gage:" + gage);
     }
+
+    
 }
