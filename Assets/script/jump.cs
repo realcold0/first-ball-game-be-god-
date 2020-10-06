@@ -8,7 +8,8 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     bool cheakgage;
     bool cheaktouch;
-    private double gage;
+    private float gage;
+    public GameObject sphere;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -20,11 +21,14 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         Debug.Log("aa");
         cheaktouch = false;
+        sphere.GetComponent<Rigidbody>().AddForce(new Vector3(gage*10,gage*10));
     }
 
     void Start()
     {
         cheakgage = true;
+        cheaktouch = false;
+        gage = 0;
     }
 
     void Update()
