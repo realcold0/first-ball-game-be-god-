@@ -14,7 +14,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject sphere; //플레이어
     public Slider powerBar; // 파워 바
     public float maxPower = 100; // 파워 최대치
-    private float currentPower;
+    
     
 
 
@@ -28,7 +28,6 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         Debug.Log("aa");
         cheaktouch = false;
-        currentPower = 0;
         sphere.GetComponent<Rigidbody>().AddForce(new Vector3(gage*jumpPower,gage*jumpPower,0));
     }
 
@@ -41,22 +40,21 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     void Update()
     {
-        
+        powerBar.value = gage / maxPower;
         if (cheaktouch == true)
         {
-            powerBar.value = gage / maxPower;
             if (cheakgage == true)
             {
                 gage += 1;
                 if (gage >= 100) cheakgage = false;
             }
-            else if (cheakgage == false)
+        }
+        if (cheakgage == false)
+        {
+            gage -= 1;
+            if (gage <= 0)
             {
-                gage -= 1;
-                if (gage <= 0)
-                {
-                    cheakgage = true;
-                }
+                cheakgage = true;
             }
         }
         Debug.Log("chaek:" + cheakgage + ", gage:" + gage);
