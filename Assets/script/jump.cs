@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    bool cheakgage; //??
+    bool cheakgage; //게이지 0 or 100 확인
     bool cheaktouch; //터시 상태
     private float gage; //모인 게이지
     public float jumpPower; //점프 세기
@@ -18,17 +18,18 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     
 
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)   //터치를 누르고 있을때 
     {
         cheaktouch = true;
     }
 
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void OnPointerUp(PointerEventData eventData)     //터치를 땔때
     {
         Debug.Log("aa");
         cheaktouch = false;
-        sphere.GetComponent<Rigidbody>().AddForce(new Vector3(gage*jumpPower,gage*jumpPower,0));
+        sphere.GetComponent<Rigidbody>().AddForce(new Vector3(gage*jumpPower,gage*jumpPower,0));    //점프시킴
+        gage = 0;   //게이트 초기화
     }
 
     void Start()
