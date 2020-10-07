@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db53119e9d213c645b0459497232adad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 0
+  jumpPower: 5
   sphere: {fileID: 2009788974}
   powerBar: {fileID: 184468895}
   maxPower: 100
