@@ -14,7 +14,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject sphere; //플레이어
     public Slider powerBar; // 파워 바
     public float maxPower = 100; // 파워 최대치
-    private float countJump;
+    public float countJump;
     public Rigidbody rb;
     
 
@@ -22,10 +22,10 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)   //터치를 누르고 있을때 
     {
         cheaktouch = true;
-        if(rb.velocity == new Vector3(0,0,0))     //연속 점프 방지용 눌렀을때 속도가 0이어야 점프카운트  0
-        {
-            countJump = 0;
-        }
+        //if(rb.velocity == new Vector3(0,0,0))     //연속 점프 방지용 눌렀을때 속도가 0이어야 점프카운트  0
+        //{
+        //    countJump = 0;
+        //}
     }
 
 
@@ -74,6 +74,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             gage -= 1;
             if (gage <= 0)
             {
+                Debug.Log("gage는 0");
                 cheakgage = true;
             }
         }
