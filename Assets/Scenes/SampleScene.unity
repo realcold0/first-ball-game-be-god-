@@ -343,7 +343,10 @@ MonoBehaviour:
   player: {fileID: 2009788978}
   stage:
   - {fileID: 7645931620474652187, guid: 881cce0869755634280f20995fe3c4c2, type: 3}
-  - {fileID: 7645931620474652187, guid: 881cce0869755634280f20995fe3c4c2, type: 3}
+  - {fileID: 8644487790303020853, guid: 3c33130d028f39c488b88a2daa18579a, type: 3}
+  - {fileID: 4295825577055454644, guid: 5d741d1fe4aae9e44af54bbf1b097c27, type: 3}
+  - {fileID: 6981389006172815357, guid: dd03bad16539c2440a66949cc5433322, type: 3}
+  - {fileID: 2631482201048992053, guid: aec03e1c5030b0346a3b4ae9686bf46e, type: 3}
   keepmap: 2
   stagelist: []
 --- !u!4 &564419446

@@ -11,6 +11,7 @@ public class map : MonoBehaviour
     public GameObject[] stage;
     public int keepmap; //유지할 맵 수
     public List<GameObject> stagelist = new List<GameObject>();
+    private int nextStageTip;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,8 @@ public class map : MonoBehaviour
     void Update()
     {
         int charpositon = (int)(player.position.x / maplength); //캐릭터 스테이지 확인
-
-        if(charpositon + keepmap > mapcount)
+        nextStageTip = Random.Range(0, stage.Length);
+        if (charpositon + keepmap > mapcount)
         {
             UpdateStage(charpositon + keepmap);
         }
@@ -32,7 +33,7 @@ public class map : MonoBehaviour
 
     GameObject CreateStage(int tipIndex)
     {
-        int nextStageTip = Random.Range(0, stage.Length);
+        //int nextStageTip = Random.Range(0, stage.Length);
 
         GameObject stageObject = (GameObject)Instantiate(
             stage[nextStageTip],
