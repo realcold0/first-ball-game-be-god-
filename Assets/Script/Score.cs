@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    int jumpcount;
     int cheakclear;
     int scoresum;
     int calculation;
@@ -17,7 +16,6 @@ public class Score : MonoBehaviour
     void Start()
     {
         cheakclear = 0;
-        jumpcount = 0;
         map = GameObject.Find("MapSystem").GetComponent<map>();
     }
 
@@ -27,9 +25,13 @@ public class Score : MonoBehaviour
         int charpositon = (int)(Player.position.x / (map.Sharemaplength));
         if(charpositon>cheakclear)
         {
-            if (15 > jumpcount * 3)
+            if (15 > jump.count * 3)
             {
                 scoresum += stagescore - jump.count * 3;
+            }
+            else if(15 >= jump.count * 3)
+            {
+                scoresum += 1;
             }
             score.text = "Socre: " + scoresum;
             jump.count = 0;
