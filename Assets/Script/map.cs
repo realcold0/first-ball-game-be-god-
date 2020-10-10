@@ -6,7 +6,7 @@ public class map : MonoBehaviour
 {
     int mapcount;   //맵
     const int maplength = 15; //맵길이
-
+    public int Sharemaplength=maplength;
     public Transform player; //플레이어 위치계산
     public GameObject[] stage;
     public int keepmap; //유지할 맵 수
@@ -17,7 +17,7 @@ public class map : MonoBehaviour
     void Start()
     {
         mapcount = 0;
-
+        
     }
 
     void Update()
@@ -67,4 +67,5 @@ public class map : MonoBehaviour
         stagelist.RemoveAt(0);
         Destroy(oldstage);
     }
+
 }
