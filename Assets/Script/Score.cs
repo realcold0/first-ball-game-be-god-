@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Score : MonoBehaviour
 {
     int cheakclear;
@@ -11,12 +10,15 @@ public class Score : MonoBehaviour
     int stagescore = 15;
     public Transform Player;
     public Text score;
+    public Text scoreend;
+    public GameObject end;
     map map;
 
     void Start()
     {
         cheakclear = 0;
         map = GameObject.Find("MapSystem").GetComponent<map>();
+        end.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,5 +39,16 @@ public class Score : MonoBehaviour
             jump.count = 0;
             cheakclear = charpositon;
         }
+        
+        if(Player.position.y<-10)
+        {
+            endevent();
+        }
+    }
+    public void endevent()
+    {
+        scoreend.text = scoresum + "점";
+        Time.timeScale = 0;
+        end.SetActive(true);
     }
 }

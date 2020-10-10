@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class BlockOfDeath : MonoBehaviour
 {
-    
+    Score score;
 
+    private void Start()
+    {
+        score = GameObject.Find("Score").GetComponent<Score>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Player")
         {
-            SceneManager.LoadScene("SampleScene");
-
+            score.endevent();
         }
     }
 }
