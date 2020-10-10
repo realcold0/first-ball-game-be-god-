@@ -11,11 +11,13 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     bool cheaktouch; //터시 상태
     private float gage; //모인 게이지
     public float jumpPower; //점프 세기
+    private int stageJumpCount; //해당 스테이지에서 점프횟수 카운트
     public GameObject sphere; //플레이어
     public Slider powerBar; // 파워 바
+    public Text jumpUi;
     public float maxPower = 100; // 파워 최대치
     public float countJump;
-    public Rigidbody rb;
+    Rigidbody rb;
     
 
 
@@ -39,12 +41,14 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             sphere.GetComponent<Rigidbody>().AddForce(new Vector3(gage * jumpPower, gage * jumpPower, 0));    //점프시킴
             Debug.Log("1단 점프!");
             countJump = 1;
+            stageJumpCount += 1; 
         }
         else if(countJump == 1 )
         {
             sphere.GetComponent<Rigidbody>().AddForce(new Vector3(0, gage * jumpPower * 2, 0));    //2단점프시킴
             Debug.Log("2단 점프!");
             countJump = 2;
+            stageJumpCount += 1;
         }
         gage = 0;   //게이트 초기화
     }
@@ -56,10 +60,12 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         gage = 0;
         countJump = 0;
         rb = sphere.GetComponent<Rigidbody>();
+        stageJumpCount = 0;
     }
 
     void Update()
     {
+        jumpUi.text = stageJumpCount + " 번";
         powerBar.value = gage / maxPower;
         if (cheaktouch == true)
         {
