@@ -13,11 +13,12 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float jumpPower; //점프 세기
     public GameObject sphere; //플레이어
     public Slider powerBar; // 파워 바
+    public Text jumpUi;
     public float maxPower = 100; // 파워 최대치
     public float countJump;
-    public Rigidbody rb;
+    Rigidbody rb;
 
-    public static int count;
+    public static int count;    //해당 스테이지에서 점프횟수 카운트
 
 
     public void OnPointerDown(PointerEventData eventData)   //터치를 누르고 있을때 
@@ -62,6 +63,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     void Update()
     {
+        jumpUi.text = count + " 번";
         powerBar.value = gage / maxPower;
         if (cheaktouch == true)
         {
