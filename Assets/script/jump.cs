@@ -54,6 +54,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     void Start()
     {
+        Time.timeScale = 1;
         cheakgage = true;
         cheaktouch = false;
         gage = 0;

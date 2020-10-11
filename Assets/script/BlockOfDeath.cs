@@ -15,7 +15,7 @@ public class BlockOfDeath : MonoBehaviour
     {
         if(collision.transform.tag == "Player")
         {
-            score.endevent();
+            score.Endevent();
         }
     }
 }

@@ -42,10 +42,10 @@ public class Score : MonoBehaviour
         
         if(Player.position.y<-10)
         {
-            endevent();
+            Endevent();
         }
     }
-    public void endevent()
+    public void Endevent()
     {
         scoreend.text = scoresum + "점";
         Time.timeScale = 0;
