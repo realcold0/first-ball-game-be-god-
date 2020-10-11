@@ -59,6 +59,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cheaktouch = false;
         gage = 0;
         countJump = 0;
+        count = 0;
         rb = sphere.GetComponent<Rigidbody>();
     }
 

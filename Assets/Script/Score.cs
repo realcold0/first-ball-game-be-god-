@@ -20,21 +20,21 @@ public class Score : MonoBehaviour
         map = GameObject.Find("MapSystem").GetComponent<map>();
         end.SetActive(false);
     }
-
     // Update is called once per frame
     void Update()
     {
         int charpositon = (int)(Player.position.x / (map.Sharemaplength));
         if(charpositon>cheakclear)
         {
-            if (15 > jump.count * 3)
+            if (stagescore > jump.count * 3)
             {
-                scoresum += stagescore - jump.count * 3;
+                scoresum += stagescore*charpositon - jump.count * 3* charpositon;
             }
-            else if(15 >= jump.count * 3)
+            else if(stagescore >= jump.count * 3)
             {
                 scoresum += 1;
             }
+            scoresum += 100 * charpositon;
             score.text = "Socre: " + scoresum;
             jump.count = 0;
             cheakclear = charpositon;
