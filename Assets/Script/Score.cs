@@ -20,6 +20,8 @@ public class Score : MonoBehaviour
     public GameObject good;
     public GameObject notbad;
     public GameObject excellent;
+
+
     void Start()
     {
         highScoreSave = PlayerPrefs.GetInt(keystring, 0);
@@ -35,10 +37,13 @@ public class Score : MonoBehaviour
     void Update()
     {
         int charpositon = (int)(Player.position.x / (map.Sharemaplength));
-
-        highscore.text = "최고 점수: " + highScoreSave;
+        if (scoresum > highScoreSave)
+        {
+            highscore.text = keystring + scoresum;
+        }
         if( scoresum > highScoreSave)
         {
+
             PlayerPrefs.SetInt(keystring, scoresum);
         }
 
