@@ -11,7 +11,10 @@ public class Score : MonoBehaviour
     public Transform Player;
     public Text score;
     public Text scoreend;
+    public Text highscore;
     public GameObject end;
+    private int highScoreSave;
+    private string keystring = "high score";
     map map;
 
     public GameObject good;
@@ -19,6 +22,8 @@ public class Score : MonoBehaviour
     public GameObject excellent;
     void Start()
     {
+        highScoreSave = PlayerPrefs.GetInt(keystring, 0);
+        highscore.text = "최고 점수" + highScoreSave;
         cheakclear = 0;
         map = GameObject.Find("MapSystem").GetComponent<map>();
         end.SetActive(false);
@@ -30,6 +35,13 @@ public class Score : MonoBehaviour
     void Update()
     {
         int charpositon = (int)(Player.position.x / (map.Sharemaplength));
+
+        highscore.text = "최고 점수: " + highScoreSave;
+        if( scoresum > highScoreSave)
+        {
+            PlayerPrefs.SetInt(keystring, scoresum);
+        }
+
         if(charpositon>cheakclear)
         {
             if (stagescore > jump.count * 3)
