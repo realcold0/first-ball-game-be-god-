@@ -17,7 +17,8 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public Text jumpUi;
     public float maxPower = 100; // 파워 최대치
     public float countJump;
-    public bool jumpplustchaek; 
+    public bool jumpplustchaek;
+    public GameObject jumpplus;
     Rigidbody rb;
 
     public static int count;    //해당 스테이지에서 점프횟수 카운트
@@ -45,6 +46,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             sphere.GetComponent<Rigidbody>().AddForce(new Vector3(0, gage * jumpPowerY * 2, 0));    //2단점프시킴
             Debug.Log("2단 점프!");
             jumpplustchaek = false;
+            jumpplus.SetActive(false);
             countJump = 2;
             count++;
         }
@@ -57,6 +59,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cheakgage = true;
         cheaktouch = false;
         jumpplustchaek = false;
+        jumpplus.SetActive(false);
         gage = 0;
         countJump = 0;
         count = 0;

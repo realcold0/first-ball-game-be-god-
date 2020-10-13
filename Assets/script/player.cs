@@ -26,6 +26,7 @@ public class player : MonoBehaviour
         if(other.transform.tag=="JumpPlus")
         {
             jumpscript.jumpplustchaek = true;
+            jumpscript.jumpplus.SetActive(true);
             Destroy(other.gameObject);
         }
     }
