@@ -15,7 +15,7 @@ public class Blockofjump : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             Debug.Log("chak");
-            player.GetComponent<Rigidbody>().AddForce(new Vector3(50,300, 0));
+            player.GetComponent<Rigidbody>().AddForce(new Vector3(80,300, 0));
         }
     }
 }
