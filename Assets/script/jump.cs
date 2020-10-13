@@ -10,7 +10,8 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     bool cheakgage; //게이지 0 or 100 확인
     bool cheaktouch; //터시 상태
     private float gage; //모인 게이지
-    public float jumpPower; //점프 세기
+    public float jumpPowerX; //점프 세기
+    public float jumpPowerY;
     public GameObject sphere; //플레이어
     public Slider powerBar; // 파워 바
     public Text jumpUi;
@@ -37,14 +38,14 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         cheaktouch = false;
         if(countJump == 0 && rb.velocity == new Vector3(0,0,0))
         {
-            sphere.GetComponent<Rigidbody>().AddForce(new Vector3(gage * jumpPower, gage * jumpPower, 0));    //점프시킴
+            sphere.GetComponent<Rigidbody>().AddForce(new Vector3(gage * jumpPowerX, gage * jumpPowerY, 0));    //점프시킴
             Debug.Log("1단 점프!");
             countJump = 1;
             count++;
         }
         else if(countJump == 1 )
         {
-            sphere.GetComponent<Rigidbody>().AddForce(new Vector3(0, gage * jumpPower * 2, 0));    //2단점프시킴
+            sphere.GetComponent<Rigidbody>().AddForce(new Vector3(0, gage * jumpPowerY * 2, 0));    //2단점프시킴
             Debug.Log("2단 점프!");
             countJump = 2;
             count++;
