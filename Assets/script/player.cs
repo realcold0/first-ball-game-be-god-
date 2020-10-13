@@ -23,6 +23,11 @@ public class player : MonoBehaviour
             Debug.Log("coin");
             Destroy(other.gameObject);
         }
+        if(other.transform.tag=="JumpPlus")
+        {
+            jumpscript.jumpplustchaek = true;
+            Destroy(other.gameObject);
+        }
     }
 
 }

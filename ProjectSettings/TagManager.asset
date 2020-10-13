@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plane
   - Coin
+  - JumpPlus
   layers:
   - Default
   - TransparentFX
