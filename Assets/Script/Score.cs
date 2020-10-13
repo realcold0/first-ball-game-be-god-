@@ -58,9 +58,9 @@ public class Score : MonoBehaviour
                 scoresum += 1;
             }
             //점수 ui
-            if (jump.count >= 0 && jump.count <= 2) { excellent.SetActive(true); Invoke("scoreevente", 2); }
-            else if (jump.count >=3 && jump.count <=4) { good.SetActive(true); Invoke("scoreeventg", 2); }
-            else if (jump.count >=5) { notbad.SetActive(true); Invoke("scoreeventn", 2); }
+            if (jump.count >= 1 && jump.count <= 3) { excellent.SetActive(true); Invoke("scoreevente", 2); Debug.Log("ex"); }
+            else if (jump.count >=4 && jump.count <=7) { good.SetActive(true); Invoke("scoreeventg", 2); }
+            else if (jump.count >= 8) { notbad.SetActive(true); Invoke("scoreeventn", 2); }
             //점수 시스템
             scoresum += 100 * charpositon;
             score.text = "Socre: " + scoresum;
