@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
     int cheakclear;
     int scoresum;
     int calculation;
-    int stagescore = 15;
+    int stagescore = 100;
     public Transform Player;
     public Text score;
     public Text scoreend;
@@ -51,17 +51,20 @@ public class Score : MonoBehaviour
         {
             if (stagescore > jump.count * 3)
             {
-                scoresum += stagescore*charpositon - jump.count * 3* charpositon;
+                scoresum += stagescore*charpositon - jump.count * 10* charpositon;
             }
             else if(stagescore >= jump.count * 3)
             {
                 scoresum += 1;
             }
+            //점수 ui
             if (jump.count >= 0 && jump.count <= 2) { excellent.SetActive(true); Invoke("scoreevente", 2); }
             else if (jump.count >=3 && jump.count <=4) { good.SetActive(true); Invoke("scoreeventg", 2); }
             else if (jump.count >=5) { notbad.SetActive(true); Invoke("scoreeventn", 2); }
+            //점수 시스템
             scoresum += 100 * charpositon;
             score.text = "Socre: " + scoresum;
+
             jump.count = 0;
             cheakclear = charpositon;
         }

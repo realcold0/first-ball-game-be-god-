@@ -18,6 +18,11 @@ public class player : MonoBehaviour
             jumpscript.countJump = 0;
             Debug.Log("점프 초기화");
         }
+        if (other.transform.tag == "Coin")
+        {
+            Debug.Log("coin");
+            Destroy(other.gameObject);
+        }
     }
 
 }

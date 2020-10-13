@@ -17,7 +17,6 @@ public class map : MonoBehaviour
     void Start()
     {
         mapcount = 0;
-        
     }
 
     void Update()
