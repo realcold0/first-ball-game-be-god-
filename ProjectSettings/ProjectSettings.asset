@@ -757,10 +757,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 6e23b592-934e-475a-af64-97c991f19b5c
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: BALLKING
+  organizationId: realcold0
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
