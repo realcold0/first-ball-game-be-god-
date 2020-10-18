@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6145561398850517303}
   m_Layer: 0
   m_Name: jump!
-  m_TagString: Plane
+  m_TagString: JumpPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c03031c273fb2a459c2289fdb46e429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &8463215211974045018
 GameObject:
   m_ObjectHideFlags: 0

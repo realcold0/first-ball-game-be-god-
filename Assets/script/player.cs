@@ -18,16 +18,21 @@ public class player : MonoBehaviour
             jumpscript.countJump = 0;
             Debug.Log("점프 초기화");
         }
-        if (other.transform.tag == "Coin")
+        else if (other.transform.tag == "Coin")
         {
             Debug.Log("coin");
             Destroy(other.gameObject);
         }
-        if(other.transform.tag=="JumpPlus")
+        else if(other.transform.tag=="JumpPlus")
         {
             jumpscript.jumpplustchaek = true;
             jumpscript.jumpplus.SetActive(true);
             Destroy(other.gameObject);
+        }
+        else if(other.transform.tag == "JumpPlane")
+        {
+            Debug.Log("chak");
+            GetComponent<Rigidbody>().AddForce(new Vector3(90, 350, 0));
         }
     }
 

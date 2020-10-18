@@ -23,6 +23,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public static int count;    //해당 스테이지에서 점프횟수 카운트
 
+    
 
     public void OnPointerDown(PointerEventData eventData)   //터치를 누르고 있을때 
     {
