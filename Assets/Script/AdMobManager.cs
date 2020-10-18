@@ -36,7 +36,6 @@ public class AdMobManager : MonoBehaviour
         bannerAd = new BannerView(isTestMode ? bannerTestID : bannerID,
             AdSize.SmartBanner, AdPosition.Bottom);
         bannerAd.LoadAd(GetAdRequest());
-        ToggleBannerAd(false);
     }
 
     public void ToggleBannerAd(bool b)
