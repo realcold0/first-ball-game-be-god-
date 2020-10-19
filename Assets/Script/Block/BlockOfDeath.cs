@@ -9,7 +9,7 @@ public class BlockOfDeath : MonoBehaviour
 
     private void Start()
     {
-        score = GameObject.Find("Score").GetComponent<Score>();
+        score = GameObject.Find("Scoremanager").GetComponent<Score>();
     }
     private void OnCollisionEnter(Collision collision)
     {

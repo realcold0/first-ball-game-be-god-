@@ -83,13 +83,13 @@ public class Score : MonoBehaviour
     }
     public void Endevent()
     {
+        Time.timeScale = 0;
         excellent.SetActive(false);
         good.SetActive(false);
         notbad.SetActive(false);
         jump.jumpplus.SetActive(false);
         scoreend.text = scoresum + "점";
         EndHightScore.text = "최고점수: "+PlayerPrefs.GetInt(keystring, 0);
-        Time.timeScale = 0;
         end.SetActive(true);
     }
 
