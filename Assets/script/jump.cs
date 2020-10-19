@@ -73,7 +73,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         rb = sphere.GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         jumpUi.text = count + " 번";
         powerBar.value = gage / maxPower;
@@ -81,17 +81,18 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             if (cheakgage == true)
             {
-                gage += 1;
+                gage += 2;
                 if (gage >= 100) cheakgage = false;
             }
-        }
-        if (cheakgage == false)
-        {
-            gage -= 1;
-            if (gage <= 0)
+
+            if (cheakgage == false)
             {
-                Debug.Log("gage는 0");
-                cheakgage = true;
+                gage -= 2;
+                if (gage <= 0)
+                {
+                    Debug.Log("gage는 0");
+                    cheakgage = true;
+                }
             }
         }
         //Debug.Log("chaek:" + cheakgage + ", gage:" + gage);
