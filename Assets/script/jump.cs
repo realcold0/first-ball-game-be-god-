@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
+
 public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     bool cheakgage; //게이지 0 or 100 확인
@@ -20,6 +21,9 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public bool jumpplustchaek;
     public GameObject jumpplus;
     Rigidbody rb;
+    AudioSource audiosource;
+
+    public GameObject JumpSound;
 
     public static int count;    //해당 스테이지에서 점프횟수 카운트
 
@@ -41,6 +45,7 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             Debug.Log("1단 점프!");
             countJump = 1;
             count++;
+            JumpSound.GetComponent<AudioSource>().Play();    //점프 시 사운드 실행
         }
         else if (countJump == 1 && jumpplustchaek == true)
         {
@@ -50,11 +55,12 @@ public class jump : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             jumpplus.SetActive(false);
             countJump = 2;
             count++;
+            JumpSound.GetComponent<AudioSource>().Play();    //점프 시 사운드 실행
         }
         gage = 0;   //게이트 초기화
     }
 
-    void Start()
+    void Awake()
     {
         Time.timeScale = 1;
         cheakgage = true;
