@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Blockofjump : MonoBehaviour
 {
-    /*public GameObject player;
+    public GameObject player;
 
     // Start is called before the first frame update
    
@@ -15,5 +15,5 @@ public class Blockofjump : MonoBehaviour
             Debug.Log("chak");
             player.GetComponent<Rigidbody>().AddForce(new Vector3(80,300, 0));
         }
-    }*/
+    }
 }
