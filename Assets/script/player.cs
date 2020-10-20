@@ -5,12 +5,11 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     jump jumpscript;
-    public GameObject JumpSound, LandingSound;
+    public GameObject JumpSound, LandingSound, GetCoin;
     
-    void Start()
+    void Awake()
     {
-        jumpscript = GameObject.Find("Panel").GetComponent<jump>();  //jump 스크립트 가져오기 변수 사용위해서
-        
+        jumpscript = GameObject.Find("Panel").GetComponent<jump>();  //jump 스크립트 가져오기 변수 사용위해
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +24,7 @@ public class player : MonoBehaviour
         {
             Debug.Log("coin");
             Destroy(other.gameObject);
+            GetCoin.GetComponent<AudioSource>().Play();
         }
         else if(other.transform.tag=="JumpPlus")
         {
