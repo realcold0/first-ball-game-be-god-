@@ -23,7 +23,7 @@ public class player : MonoBehaviour
         else if (other.transform.tag == "Coin")
         {
             Debug.Log("coin");
-            Destroy(other.gameObject);
+            Destroy(other.gameObject.transform.parent.gameObject);
             GetCoin.GetComponent<AudioSource>().Play();
         }
         else if(other.transform.tag=="JumpPlus")

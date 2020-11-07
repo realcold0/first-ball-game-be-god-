@@ -24,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5803370226902264542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0079, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.007899999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5802504328690489018}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5835672409867912450}
   - component: {fileID: 5826734632268554262}
   - component: {fileID: 5803370227162507751}
-  - component: {fileID: 1850525688832669614}
+  - component: {fileID: 7283455261312447829}
   m_Layer: 0
   m_Name: GoldCoin
   m_TagString: Coin
@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5804114615406517756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000015655, y: 0.000018059558, z: -0.0000024601861}
+  m_LocalPosition: {x: 0, y: 0.000018059558, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5802504328690489018}
@@ -192,7 +192,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &1850525688832669614
+--- !u!65 &7283455261312447829
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
